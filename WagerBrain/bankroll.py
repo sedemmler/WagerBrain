@@ -13,4 +13,3 @@ def basic_kelly_criterion(prob, odds, kelly_size=1):
     :return: % of bankroll one should commit to wager
     """
     return round((((prob * odds) - 1) / (odds - 1) * kelly_size), 2)
-
