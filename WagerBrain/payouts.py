@@ -27,7 +27,7 @@ def fractional_payout(stake, odds):
     return (stake * (odds.numerator / odds.denominator)) + stake
 
 
-# Profit is whatever incremental gain above your stake that is returned (e.g., $100 pays $110, the profit si $10)
+# Profit is whatever incremental gain above your stake that is returned (e.g., $100 pays $110, the profit is $10)
 def american_profit(stake, odds):
     if odds > 0:
         return stake * (odds / 100)

@@ -48,6 +48,6 @@ def win_prob_to_odds(prob, odds_style="a"):
         elif odds_style.lower() == "fractional" or odds_style.lower() == 'frac' or odds_style.lower() == 'f':
             return Fraction((1 / prob) - 1).limit_denominator()
 
-
     except (ValueError, KeyError, NameError):
         return None
+
