@@ -1,7 +1,7 @@
 # WagerBrain
 A package containing the essential math required for sports betting and gambling.
 
-**Phase 1 (_ready for testing_):** 
+**Phase 1 (_in progress_):** 
  - Convert Odds between American, Decimal, Fractional
  - Convert Odds to Implied Win Probabilities and back to Odds
  - Calculate Profit and Total Payouts
