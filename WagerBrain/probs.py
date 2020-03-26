@@ -27,15 +27,3 @@ def fractional_implied_win_prob(odds):
 
 def expected_value(stake, profit, win_prob):
     return profit * win_prob - stake * (1 - win_prob)
-
-
-
-stake = 100
-odds = 1.66
-profit = decimal_profit(stake, odds)
-payout = decimal_payout(stake, odds)
-win = decimal_implied_win_prob(odds)
-
-print("Profit: ", profit)
-print("Payout: ", payout)
-print("Win Prob: ", win)
