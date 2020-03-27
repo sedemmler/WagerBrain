@@ -79,10 +79,6 @@ def fractional_odds(odds):
             return -Fraction(num, denom)
 
     elif isinstance(odds, float):
-        num = (odds - 1) * 100
-        denom = 100
-        g_cd = gcd(int(num), denom)
-        num = int(num / g_cd)
-        denom = int(denom / g_cd)
-
-        return Fraction(num, denom)
+        new_odds = int((odds - 1) * 100)
+        g_cd = gcd(new_odds, 100)
+        return Fraction(int(new_odds/g_cd), int(100/g_cd))
