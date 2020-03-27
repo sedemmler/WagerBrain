@@ -1,5 +1,5 @@
 # WagerBrain
-A package containing the essential math required for sports betting and gambling.
+A package containing the essential math and tools required for sports betting and gambling.
 
 **Phase 1 (_in progress_):** 
  - Convert Odds between American, Decimal, Fractional
