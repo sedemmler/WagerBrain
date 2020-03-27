@@ -13,10 +13,6 @@ def basic_kelly_criterion(prob, odds, kelly_size=1):
     :param kelly_size: Risk management. (e.g., 1 is Kelly Criterion, .5 is Half Kelly, 2+ is Levered Kelly)
     :return: % of bankroll one should commit to wager
     """
-    odds = decimal_odds(odds)
-    print(odds)
-
-    return (((odds * prob) - (1 - prob)) / odds) * kelly_size
-
-
-print(basic_kelly_criterion(.6, -125))
+    b = odds - 1
+    q = 1 - prob
+    return ((b * q - prob) / b) * kelly_size
