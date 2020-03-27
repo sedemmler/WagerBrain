@@ -33,10 +33,12 @@ def decimal_odds(odds):
         return odds
 
     elif isinstance(odds, int):
-        if odds > 0:
+        if odds >= 100:
             return abs(1 + (odds / 100))
+        elif odds <= -101 :
+            return 100 / abs(odds) + 1
         else:
-            return (100 / abs(odds) + 1)
+            return float(odds)
 
     elif "/" in odds:
         odds = Fraction(odds)
