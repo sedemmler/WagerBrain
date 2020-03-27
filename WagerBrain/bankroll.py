@@ -8,22 +8,22 @@ Bankroll management functions
 
 def basic_kelly_criterion(prob, odds, kelly_size=1):
     """
-    :param prob: Estimated probability of winning the wager
-    :param odds: Stated odds from bookmaker
-    :param kelly_size: Risk management. (e.g., 1 is Kelly Criterion, .5 is Half Kelly, 2+ is Levered Kelly)
-    :return: % of bankroll one should commit to wager
+    :param prob: Float. Estimated probability of winning the wager
+    :param odds: Integer (American), Float(Decimal), String or Fraction Class (Fractional). Stated odds from bookmaker
+    :param kelly_size: Integer. Risk management. (e.g., 1 is Kelly Criterion, .5 is Half Kelly, 2+ is Levered Kelly)
+    :return: Float. % of bankroll one should commit to wager
     """
-    b = odds - 1
+    b = decimal_odds(odds) - 1
     q = 1 - prob
     return ((b * q - prob) / b) * kelly_size
 
 
 def fibonacci_bankroll(odds, bet_num=1, unit_size=.01):
     """
-    :param odds: Stated odds from bookmaker
-    :param bet_num: How many bets you've made so far
-    :param unit_size: % of bankroll wagered per bet
-    :return: Fibonacci multiplied bet size
+    :param odds: Integer (American), Float(Decimal), String or Fraction Class (Fractional). Stated odds from bookmaker
+    :param bet_num: Integer. How many bets you've made so far
+    :param unit_size: Float. % of bankroll wagered per bet
+    :return: Float. Fibonacci multiplied bet size
     """
     fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 100]
     if bet_num > len(fib):

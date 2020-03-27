@@ -15,10 +15,18 @@ Calculate Odds (Amer, Dec, Frac) from Implied Win %'s
 
 
 def decimal_implied_win_prob(odds):
+    """
+    :param odds: Float. Odds expressed in Decimal terms.
+    :return: Float. The implied win % of stated odds.
+    """
     return round(1 / odds, 3)
 
 
 def american_implied_win_prob(odds):
+    """
+    :param odds: Integer. Odds expressed in American terms.
+    :return: Float. The implied win % of stated odds.
+    """
     if odds > 0:
         return round(100 / (odds + 100), 3)
     else:
@@ -26,18 +34,28 @@ def american_implied_win_prob(odds):
 
 
 def fractional_implied_win_prob(odds):
+    """
+    :param odds: String (e.g., '3/1') or Python Fraction Class.
+    :return: Float. The implied win % of stated odds.
+    """
     odds = Fraction(odds)
     return round(1 / ((odds.numerator / odds.denominator) + 1), 3)
 
 
 def expected_value(stake, profit, win_prob):
+    """
+    :param stake: Float. Amount wagered.
+    :param profit: Float. Amount won if bet pays.
+    :param win_prob: Float. Your estimated win %
+    :return: Float. Value of wager over the long run in Stake terms
+    """
     return profit * win_prob - stake * (1 - win_prob)
 
 
 def win_prob_to_odds(prob, odds_style="a"):
     """
-    :param prob: Implied winning % of a given wager
-    :param odds_style: American, Decimal, Fractional
+    :param prob: Float. Implied winning % of a given wager
+    :param odds_style: Integer (American), Float(Decimal), String or Fraction Class (Fractional)
     :return: The stated odds of a bet in a given style
     """
     try:
@@ -55,4 +73,3 @@ def win_prob_to_odds(prob, odds_style="a"):
 
     except (ValueError, KeyError, NameError):
         return None
-

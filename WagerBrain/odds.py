@@ -10,6 +10,10 @@ TO DO: Fix edge case related to Fraction module that causes weird rounding / sli
 
 
 def american_odds(odds):
+    """
+    :param odds: Float (e.g., 2.25) or String (e.g., '3/1' or '5/4').
+    :return: Integer. Odds expressed in American terms.
+    """
     if isinstance(odds, int):
         return odds
 
@@ -29,6 +33,10 @@ def american_odds(odds):
 
 
 def decimal_odds(odds):
+    """
+    :param odds: Integer (e.g., -350) or String (e.g., '3/1' or '5/4').
+    :return: Float. Odds expressed in Decimal terms.
+    """
     if isinstance(odds, float):
         return odds
 
@@ -46,8 +54,12 @@ def decimal_odds(odds):
 
 
 def fractional_odds(odds):
+    """
+    :param odds: Numeric. (e.g., 2.25 or -350).
+    :return: Fraction Class. Odds expressed in Fractional terms.
+    """
     if isinstance(odds, str):
-        return odds
+        return Fraction(odds)
 
     elif isinstance(odds, int):
         if odds > 0:
