@@ -1,5 +1,5 @@
 # WagerBrain
-A package containing the essential math and tools required for sports betting and gambling. Once you got your odds scraped from Covers.com, Pinnacle, Betfair, or wherever, import WagerBrain and start hunting for value bets.
+A package containing the essential math and tools required for sports betting and gambling. Once you've scraped odds from Covers.com, Pinnacle, Betfair, or wherever, import WagerBrain and start hunting for value bets.
 
 ![Image of The Big Board](https://miro.medium.com/max/1312/1*bGOGcEPpsa0tetM5u-J9NA.jpeg)
 
