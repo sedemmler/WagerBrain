@@ -11,9 +11,6 @@ Calculate Expected Value of a wager
 Calculate Odds (Amer, Dec, Frac) from Implied Win %'s
 
 """
-# TODO: Fix issue properly representing fractions across all modules in package.
-# TODO: (part 1) EV acts perfect with harcoded values but returns strange results when passing the result of other
-# TODO: (part 2) module, even though the other modules return proper results.
 
 
 def decimal_implied_win_prob(odds):
