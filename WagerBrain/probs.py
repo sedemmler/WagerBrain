@@ -35,6 +35,11 @@ def expected_value(stake, profit, win_prob):
 
 
 def win_prob_to_odds(prob, odds_style="a"):
+    """
+    :param prob: Implied winning % of a given wager
+    :param odds_style: American, Decimal, Fractional
+    :return: The stated odds of a bet in a given style
+    """
     try:
         if odds_style.lower() == "american" or odds_style.lower() == 'amer' or odds_style.lower() == 'a':
             if prob >= .50:
