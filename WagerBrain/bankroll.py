@@ -18,34 +18,34 @@ def basic_kelly_criterion(prob, odds, kelly_size=1):
     return ((b * q - prob) / b) * kelly_size
 
 
-def fibonacci_bankroll():
+def fibonacci_bankroll(odds, bet_num=1, unit_size=.01):
     """
-    Only bet on draws when the probability is above 2.618
-    Increase your betting stake in a way that follows the Fibonacci sequence: 1, 1, 2, 3, 5, 8, 13, 21 etc.
+    :param odds: Stated odds from bookmaker
+    :param bet_num: How many bets you've made so far
+    :param unit_size: % of bankroll wagered per bet
+    :return: Fibonacci multiplied bet size
     """
-    pass
+    fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 100]
+    if bet_num > len(fib):
+        bet_num = fib[-1]
+
+    if decimal_odds(odds) > 2.618:
+        return unit_size * fib[bet_num]
+    else:
+        return None
 
 
-def labouchere_bankroll():
+def five_bet_labouchere_bankroll(target):
     """
-    To be profitable in sports betting, staking strategy is as important as finding value odds.
-    With many progressive staking systems, such as the Labouchere system, promising almost infinite wealth,
-    are they a good idea to follow? Here’s the academic answer to the question.
+    Pick a target $-amount you want to win. and then make a sequence of bets that follows the ratio output below.
 
-    The Labouchère staking system is a progressive staking method acording to which a bettor continues to bet until a
-    particular winning amount is reached, and is traditionally used for Roulette.
+    Each wager must be at odds such that the profit (payout) is the sum of the first and last number in your list.
+    If bet 1 wins 20 (.1 + .1) then cross off the first and last numbers.
 
-    The Labouchère staking method in sports betting
-    Labouchère can be easily extended to sports betting and the steps involved in applying this staking method
-    are the following:
+    If you lose add your stake to the list below.
 
-    Decide how much money you want to win. Let's aim, for example, to win $100.
-    Determine how you will split this money. Say you split it up over five values: $10, $20, $40, $20, $10.
-    Place a bet that would win the sum of the first and last numbers. If the European/Decimal odd is
-    3 (+200 American/MoneyLine) for example, you would stake $10, so as to win $20 back (the sum of the first and
-    last number).
-    If you win, you tick off the first and last number. Otherwise, you add the amount of the stake you made, so that you
-    need to win this back. In this case, you would have $10, $20, $40, $20, $10 and $10.
-    Repeat steps 3 and 4 until you win the amount you are aiming for.
+    :param target: Integer. How much do you want to win?
+    :return: List. Sequence of $ amount bets to make.
     """
-    pass
+    labouchere_div = [.1, .2, .4, .2, .1]
+    return [target * x for x in labouchere_div]
