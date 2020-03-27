@@ -1,6 +1,15 @@
 from WagerBrain.odds import decimal_odds
 
 
+def break_even_pct(stake, payout):
+    """
+    :param stake: Float. Currency amount wagered.
+    :param payout: Float. Currency amount paid out (stake + profit)
+    :return: Float. % Amount of time you need to win more than to be profitable. % > 100 because of Vig
+    """
+    return stake / payout
+
+
 def bookmaker_margin(fav_odds, dog_odds, draw_odds=None):
     """
     :param fav_odds:  Integer (American), Float(Decimal), String or Fraction Class (Fractional) The odds on offer for the favorite
@@ -49,3 +58,4 @@ def bookmaker_commission(fav_odds, dog_odds, commish, draw_odds=None):
         draw_odds = 1 + ((1 - (commish / 100)) * (draw_odds - 1))
 
         return (((1 / fav_odds) * 100 + (1 / dog_odds) * 100 + (1 / draw_odds) * 100) - 100) / 100
+

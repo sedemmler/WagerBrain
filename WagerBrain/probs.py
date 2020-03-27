@@ -2,6 +2,7 @@ from fractions import Fraction
 from math import gcd
 from WagerBrain.payouts import decimal_profit, decimal_payout
 from WagerBrain.odds import fractional_odds, decimal_odds, american_odds
+from WagerBrain.utils import break_even_pct
 
 """
 
@@ -43,14 +44,36 @@ def fractional_implied_win_prob(odds):
     return round(1 / ((odds.numerator / odds.denominator) + 1), 3)
 
 
-def expected_value(stake, profit, win_prob):
+def stated_odds_ev(stake_win,  profit_win, stake_lose, profit_lose):
     """
+    This is the Expected Value (ev) derived from stated odds at a bookmaker. It uses implied win % break-evens. This adds to more than
+    100% because it incorporates the Vig. Use "true_odds_ev" to plug in user-calculated odds.
+    Most stated odds will produce negative EV. The edge is in your own work and could be seen in true_odds_ev.
+    :param stake_win: Float. Amount wagered on FAVORITE.
+    :param profit_win: Float. Net amount won on FAVORITE.
+    :param stake_lose: Float. Float. Amount wagered on UNDERDOG.
+    :param profit_lose: Float. Net amount won on UNDERDOG.
+    :return: Float. The expected value of wagering on winner.
+    """
+    payout_win = stake_win + profit_win
+    payout_lose = stake_lose + profit_lose
+
+    win_prob = break_even_pct(stake_win, payout_win)
+    lose_prob = break_even_pct(stake_lose, payout_lose)
+
+    return (win_prob * profit_win) - (lose_prob * stake_win)
+
+
+def true_odds_ev(stake, profit, prob):
+    """
+    This is the Expected Value (ev) derived from user-calculated odds. For EV on stated odds and implied win % from a
+    bookmaker, use 'stated_odds_ev.
     :param stake: Float. Amount wagered.
-    :param profit: Float. Amount won if bet pays.
-    :param win_prob: Float. Your estimated win %
-    :return: Float. Value of wager over the long run in Stake terms
+    :param profit: Float. Net amount returned by wager.
+    :param prob: Float. % chance of winning outcome.
+    :return: Float. The expected value of wagering on winner.
     """
-    return profit * win_prob - stake * (1 - win_prob)
+    return (profit * prob) - (stake * (1 - prob))
 
 
 def win_prob_to_odds(prob, odds_style="a"):
@@ -74,3 +97,5 @@ def win_prob_to_odds(prob, odds_style="a"):
 
     except (ValueError, KeyError, NameError):
         return None
+
+
