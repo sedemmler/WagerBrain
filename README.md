@@ -3,20 +3,20 @@ A package containing the essential math and tools required for sports betting an
 
 ![Image of The Big Board](https://miro.medium.com/max/1312/1*bGOGcEPpsa0tetM5u-J9NA.jpeg)
 
-**Phase 1 (_in progress_):** 
+**Phase 1 (_first iteration complete_):** 
  - Convert Odds between American, Decimal, Fractional
  - Convert Odds to Implied Win Probabilities and back to Odds
  - Calculate Profit and Total Payouts
  - Calculate Expected Value
  - Calculate Kelly Criterion
  
- **Phase 2 (_not started_):**
+ **Phase 2 (_in progress_):**
  - Complex bankroll management on a multi-bet or portfolio scale
  - Calculate bookmaker spread/cost
  - Clean up functions into logical classes
  
  **Phase 3 (_not started_):**
- - Value Bets (take in sets of odds, probabilities and output the most effective betting strategy)
+ - Value Bets (take in sets of odds, probabilities and output the most effective betting implementation)
  - Arbitrage (search sets of odds, probabilities and return, if available, arbitrage opportunities)
  - Visualization (compare all wager opportunities, et al)
  
