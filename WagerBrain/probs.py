@@ -1,6 +1,7 @@
 from fractions import Fraction
 from math import gcd
 from WagerBrain.payouts import decimal_profit, decimal_payout
+from WagerBrain.odds import fractional_odds, decimal_odds, american_odds
 
 """
 
@@ -19,7 +20,7 @@ def decimal_implied_win_prob(odds):
     :param odds: Float. Odds expressed in Decimal terms.
     :return: Float. The implied win % of stated odds.
     """
-    return round(1 / odds, 3)
+    return round(1 / decimal_odds(odds), 3)
 
 
 def american_implied_win_prob(odds):
@@ -28,9 +29,9 @@ def american_implied_win_prob(odds):
     :return: Float. The implied win % of stated odds.
     """
     if odds > 0:
-        return round(100 / (odds + 100), 3)
+        return round(100 / (american_odds(odds) + 100), 3)
     else:
-        return round(abs(odds) / (abs(odds) + 100), 3)
+        return round(abs(american_odds(odds)) / (abs(american_odds(odds)) + 100), 3)
 
 
 def fractional_implied_win_prob(odds):
@@ -38,7 +39,7 @@ def fractional_implied_win_prob(odds):
     :param odds: String (e.g., '3/1') or Python Fraction Class.
     :return: Float. The implied win % of stated odds.
     """
-    odds = Fraction(odds)
+    odds = fractional_odds(odds)
     return round(1 / ((odds.numerator / odds.denominator) + 1), 3)
 
 
