@@ -37,7 +37,7 @@ No clue how to read decimal odds because you're American? (wager * decimals odds
 ```
 american_odds(6.92)
 +592
-```
+``` 
 What's the Vig on the Yankees vs Dodgers?
 ```
 Yankees -115
