@@ -10,6 +10,7 @@ A package containing the essential math and tools required for sports betting an
  - Calculate Expected Value
  - Calculate Kelly Criterion
  - Calculate Parlay Odds, Total Payout, Profit
+ - Calculate the Bookmaker's Vig
  
  **Phase 2 (_in progress_):**
  - Complex bankroll management on a multi-bet or portfolio scale
@@ -32,4 +33,18 @@ odds = [1.91, -110, '9/10']
 parlay_odds(odds)
 6.92
 ```
+No clue how to read decimal odds because you're American? (wager * decimals odds, though...super simple), then convert them back to American-style odds:
+```
+american_odds(6.92)
++592
+```
+What's the Vig on the Yankees vs Dodgers?
+```
+Yankees -115
+Dodgers +105
+Betting 115 to win 100 on Yankees
+Betting 100 to win 205 on Dodgers
 
+vig(115,215,100,205)
+2.26%
+```

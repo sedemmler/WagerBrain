@@ -18,7 +18,7 @@ def vig(f_stake, f_payout, u_stake, u_payout):
     :param u_payout: Float. Total payout on Underdog.
     :return: % vig paid to the bookmaker.
     """
-    return (break_even_pct(f_stake, f_payout) + break_even_pct(u_stake, u_payout)) - 100
+    return (break_even_pct(f_stake, f_payout) + break_even_pct(u_stake, u_payout)) - 1
 
 
 def bookmaker_margin(fav_odds, dog_odds, draw_odds=None):
@@ -71,3 +71,5 @@ def bookmaker_commission(fav_odds, dog_odds, commish, draw_odds=None):
 
         return (((1 / fav_odds) * 100 + (1 / dog_odds) * 100 + (1 / draw_odds) * 100) - 100) / 100
 
+print(break_even_pct(115,215) + break_even_pct(100,205) - 1)
+print(vig(115,215,100,205))
