@@ -25,7 +25,7 @@ A package containing the essential math and tools required for sports betting an
   **Phase 4 (_not started_):**
   - Automation and Intelligence (e.g., Using phases 1-3 as tools, develop ML and AI models to make predictions, manage bankroll, execute bets)
 
-#**Examples**
+# Examples
 
 Parlay 3 wagers from different sites offering different odds-styles:
 ```
