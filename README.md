@@ -9,6 +9,7 @@ A package containing the essential math and tools required for sports betting an
  - Calculate Profit and Total Payouts
  - Calculate Expected Value
  - Calculate Kelly Criterion
+ - Calculate Parlay Odds, Total Payout, Profit
  
  **Phase 2 (_in progress_):**
  - Complex bankroll management on a multi-bet or portfolio scale
