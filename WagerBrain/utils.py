@@ -10,6 +10,17 @@ def break_even_pct(stake, payout):
     return stake / payout
 
 
+def vig(f_stake, f_payout, u_stake, u_payout):
+    """
+    :param f_stake: Float. Amount bet on Favorite.
+    :param f_payout: Float. Total payout on Favorite.
+    :param u_stake: Float. Amount bet on Underdog.
+    :param u_payout: Float. Total payout on Underdog.
+    :return: % vig paid to the bookmaker.
+    """
+    return (break_even_pct(f_stake, f_payout) + break_even_pct(u_stake, u_payout)) - 100
+
+
 def bookmaker_margin(fav_odds, dog_odds, draw_odds=None):
     """
     :param fav_odds:  Integer. (American), Float(Decimal), String or Fraction Class (Fractional) The odds on offer for the favorite
