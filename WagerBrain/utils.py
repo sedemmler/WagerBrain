@@ -12,8 +12,9 @@ def break_even_pct(stake, payout):
 
 def bookmaker_margin(fav_odds, dog_odds, draw_odds=None):
     """
-    :param fav_odds:  Integer (American), Float(Decimal), String or Fraction Class (Fractional) The odds on offer for the favorite
-    :param dog_odds:  Integer (American), Float(Decimal), String or Fraction Class (Fractional) The odds on offer for the underdog
+    :param fav_odds:  Integer. (American), Float(Decimal), String or Fraction Class (Fractional) The odds on offer for the favorite
+    :param dog_odds:  Integer. (American), Float(Decimal), String or Fraction Class (Fractional) The odds on offer for the underdog
+    :param draw_odds: Integer. (American), Float(Decimal), String or Fraction Class (Fractional) The odds on offer for a tie
     :return: Float. Percentage of wager paying bookmaker margin (bookmaker's edge normalized as % in decimal terms
     """
     if not draw_odds:
