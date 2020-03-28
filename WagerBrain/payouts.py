@@ -1,4 +1,5 @@
 from fractions import Fraction
+from WagerBrain.odds import parlay_odds
 """
 
 Calculate payouts and profits.
@@ -68,3 +69,23 @@ def get_profit(odds, stake, odds_style='a'):
 
     except (ValueError, KeyError, NameError):
         return None
+
+
+def parlay_profit(odds, stake):
+    """
+    :param odds: List. A list of odds for wagers to be included in parlay
+    :param stake: Float. How much cash you're throwing down on this ill-advised parlay
+    :return: Float. Net profit = profit - stake
+    """
+    odds = parlay_odds(odds)
+    return (odds * stake) - stake
+
+
+def parlay_payout(odds, stake):
+    """
+    :param odds: List. A list of odds for wagers to be included in parlay
+    :param stake: Float. How much cash you're throwing down on this ill-advised parlay
+    :return: Float. Your total payout (stake + profit)
+    """
+    odds = parlay_odds(odds)
+    return odds * stake

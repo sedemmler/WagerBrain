@@ -1,5 +1,6 @@
 from fractions import Fraction
 from math import gcd
+import numpy as np
 
 
 """
@@ -102,3 +103,11 @@ def convert_odds(odds, odds_style='a'):
 
     except (ValueError, KeyError, NameError):
         return None
+
+
+def parlay_odds(odds):
+    """
+    :param odds: List. A list of odds for wagers to be included in parlay
+    :return: Parlay odds in Decimal terms
+    """
+    return np.prod(np.array([decimal_odds(x) for x in odds]))
