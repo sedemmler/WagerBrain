@@ -82,3 +82,23 @@ def fractional_odds(odds):
         new_odds = int((odds - 1) * 100)
         g_cd = gcd(new_odds, 100)
         return Fraction(int(new_odds/g_cd), int(100/g_cd))
+
+
+def convert_odds(odds, odds_style='a'):
+    """
+    :param odds: Stated odds from bookmaker (American, Decimal, or Fractional)
+    :param odds_style: American ('a', 'amer', 'american'), Decimal ('d', dec','decimal) Fractional ('f','frac','fractional)
+    :return: Numeric. Odds converted to selected style.
+    """
+    try:
+        if odds_style.lower() == "american" or odds_style.lower() == 'amer' or odds_style.lower() == 'a':
+            return american_odds(odds)
+
+        elif odds_style.lower() == "decimal" or odds_style.lower() == 'dec' or odds_style.lower() == 'd':
+            return decimal_odds(odds)
+
+        elif odds_style.lower() == "fractional" or odds_style.lower() == 'frac' or odds_style.lower() == 'f':
+            return fractional_odds(odds)
+
+    except (ValueError, KeyError, NameError):
+        return None
