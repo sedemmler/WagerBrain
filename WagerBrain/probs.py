@@ -96,3 +96,9 @@ def win_prob_to_odds(prob, odds_style="a"):
         return None
 
 
+def elo_prob(elo_diff):
+    """
+    :param elo_diff: Team A’s ELO rating minus Team B’s ELO rating, plus or minus the difference in several adjustments
+    :return: % win probability for Team A
+    """
+    return 1 / (10**(-elo_diff/400) + 1)

@@ -111,5 +111,3 @@ def parlay_odds(odds):
     :return: Parlay odds in Decimal terms
     """
     return np.prod(np.array([decimal_odds(x) for x in odds]))
-
-print(american_odds(6.92))

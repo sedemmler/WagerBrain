@@ -70,6 +70,3 @@ def bookmaker_commission(fav_odds, dog_odds, commish, draw_odds=None):
         draw_odds = 1 + ((1 - (commish / 100)) * (draw_odds - 1))
 
         return (((1 / fav_odds) * 100 + (1 / dog_odds) * 100 + (1 / draw_odds) * 100) - 100) / 100
-
-print(break_even_pct(115,215) + break_even_pct(100,205) - 1)
-print(vig(115,215,100,205))

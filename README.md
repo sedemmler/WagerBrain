@@ -11,6 +11,7 @@ A package containing the essential math and tools required for sports betting an
  - Calculate Kelly Criterion
  - Calculate Parlay Odds, Total Payout, Profit
  - Calculate the Bookmaker's Vig
+ - Calculate Win Probability from a team's ELO (538-style)
  
  **Phase 2 (_in progress_):**
  - Complex bankroll management on a multi-bet or portfolio scale
