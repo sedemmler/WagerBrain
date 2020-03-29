@@ -3,7 +3,7 @@ A package containing the essential math and tools required for sports betting an
 
 ![Image of The Big Board](https://miro.medium.com/max/1312/1*bGOGcEPpsa0tetM5u-J9NA.jpeg)
 
-**Phase 1 (_first iteration complete_):** 
+**Phase 1 (_complete_):** 
  - Convert Odds between American, Decimal, Fractional
  - Convert Odds to Implied Win Probabilities and back to Odds
  - Calculate Profit and Total Payouts
