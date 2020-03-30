@@ -14,6 +14,7 @@ arb_hunter_estimator = {1.2: 6.0,
                         2.0: 2.0}
 """
 
+
 def arb_percentage(odds):
     """
     :param odds: List of Floats. Pair of odds for a single matchup - Player 1 and Player 2.
