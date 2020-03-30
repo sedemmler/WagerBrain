@@ -51,3 +51,17 @@ Betting 100 to win 205 on Dodgers
 vig(115,215,100,205)
 2.26%
 ```
+Arbitrage Example
+```
+            5Dimes	Pinnacle
+Djokovic    *1.360*	1.189
+Nadal	    3.170	*5.500*
+
+odds = [1.36, 5.5]
+stake = 1000
+basic_arbitrage(odds, stake)
+
+Bet $801.53 on Djokovic
+Bet $198.47 on Nadal
+Win $90.51 regardless of the outcome
+```
