@@ -34,12 +34,12 @@ Parlay 3 wagers from different sites offering different odds-styles:
 ```
 odds = [1.91, -110, '9/10']
 parlay_odds(odds)
-6.92
+>>>> 6.92
 ```
 No clue how to read decimal odds because you're American? (wager * decimals odds, though...super simple), then convert them back to American-style odds:
 ```
 american_odds(6.92)
-+592
+>>>> +592
 ``` 
 What's the Vig on the Yankees vs Dodgers?
 ```
@@ -49,7 +49,7 @@ Betting 115 to win 100 on Yankees
 Betting 100 to win 205 on Dodgers
 
 vig(115,215,100,205)
-2.26%
+>>>> 2.26%
 ```
 Arbitrage Example
 ```
@@ -61,7 +61,7 @@ odds = [1.36, 5.5]
 stake = 1000
 basic_arbitrage(odds, stake)
 
-Bet $801.53 on Djokovic
-Bet $198.47 on Nadal
-Win $90.51 regardless of the outcome
+>>>> Bet $801.53 on Djokovic
+>>>> Bet $198.47 on Nadal
+>>>> Win $90.51 regardless of the outcome
 ```
