@@ -10,17 +10,19 @@ A package containing the essential math and tools required for sports betting an
  - Calculate Expected Value
  - Calculate Kelly Criterion
  - Calculate Parlay Odds, Total Payout, Profit
+
+ 
+ **Phase 2 (_complete_):**
+ - Evaluate Wager-Arbitrage Opportunities
+ - Calculate bookmaker spread/cost
  - Calculate the Bookmaker's Vig
  - Calculate Win Probability from a team's ELO (538-style)
+
  
- **Phase 2 (_in progress_):**
- - Complex bankroll management on a multi-bet or portfolio scale
- - Calculate bookmaker spread/cost
+ **Phase 3 (_in progress_):**
  - Clean up functions into logical classes
- 
- **Phase 3 (_not started_):**
  - Value Bets (take in sets of odds, probabilities and output the most effective betting implementation)
- - Arbitrage (search sets of odds, probabilities and return, if available, arbitrage opportunities)
+ - Scan for Arbitrage (search scrape bookmakers to feed into Phase 2's Arbitrage evaluator)
  - Visualization (compare all wager opportunities, et al)
  
   **Phase 4 (_not started_):**

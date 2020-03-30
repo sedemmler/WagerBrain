@@ -49,3 +49,4 @@ def five_bet_labouchere_bankroll(target):
     """
     labouchere_div = [.1, .2, .4, .2, .1]
     return [target * x for x in labouchere_div]
+
