@@ -66,20 +66,3 @@ basic_arbitrage(odds, stake)
 >>>> Bet $198.47 on Nadal
 >>>> Win $90.51 regardless of the outcome
 ```
-Scraper Example
-```
-nba_reference_df(make_soup())
->>>>
-                       Player  Age   G  GS  ...  PF_per  PTS_per  ORTG DRTG
-0                Steven Adams   26  58  58  ...     3.5     19.7   123  106
-1                 Bam Adebayo   22  65  65  ...     3.6     23.1   117  106
-2           LaMarcus Aldridge   34  53  53  ...     3.5     27.4   115  113
-3    Nickeil Alexander-Walker   21  41   0  ...     4.2     19.5    91  113
-4               Grayson Allen   24  30   0  ...     3.4     20.7   111  115
-..                        ...  ...  ..  ..  ...     ...      ...   ...  ...
-619            Thaddeus Young   31  64  16  ...     4.1     20.0   101  108
-620                Trae Young   21  60  60  ...     2.3     39.1   114  117
-621               Cody Zeller   27  58  39  ...     5.2     24.0   116  111
-622                Ante Žižić   23  22   0  ...     5.9     21.1   116  113
-623               Ivica Zubac   22  64  62  ...     6.0     20.8   132  104
-```
