@@ -141,7 +141,3 @@ def nba_reference_df(response):
     del (nba_df['unsure'])
 
     return nba_df
-
-response = make_soup()
-test = nba_reference_df(make_soup())
-print(test)
