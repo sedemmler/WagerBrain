@@ -21,12 +21,3 @@ def spread_H_dog_to_fav(df):
     perc = len(home_flip_spread_win) / len(home_flip_spread_total)
 
     return win_prob_to_odds(perc)
-
-
-
-
-
-file = '/Users/demmler/PycharmProjects/WagerBrain/WagerBrain/data/NBA Odds Complete.csv'
-nba = pd.read_csv(file, header=0, parse_dates=['Date'])
-
-print(spread_H_dog_to_fav(nba))
