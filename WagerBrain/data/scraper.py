@@ -92,3 +92,27 @@ def bball_ref_per100():
     per_100_poss['DRtg'] = per_100_poss['DRtg'].astype('float')
 
     return per_100_poss
+
+
+def bball_ref_adv():
+    url = 'https://www.basketball-reference.com/leagues/NBA_2020_advanced.html'
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content, 'lxml')
+
+    table = soup.table
+    table_rows = table.find_all('tr')
+
+    team_rows = list()
+    for tr in table_rows:
+        td = tr.find_all('td')
+        row = [i.text for i in td]
+        team_rows.append(row)
+
+    cols = ['Player', 'Pos', 'Age', 'Tm', 'G', 'MP', 'PER', 'TS%', '3PAr', 'FTr', 'ORB%', 'DRB%', 'TRB%', 'AST%',
+            'STL%', 'BLK%', 'TOV%', 'USG%', "NONE", 'OWS', 'DWS', 'WS', 'WS_48', 'NONE', 'OBPM', 'DBPM', 'BPM', 'VORP']
+
+    adv = pd.DataFrame(team_rows, columns=cols)
+
+    adv = adv.mask(adv.eq('NONE')).dropna()
+
+    return adv
