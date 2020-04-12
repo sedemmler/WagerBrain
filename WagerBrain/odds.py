@@ -85,6 +85,14 @@ def fractional_odds(odds):
         return Fraction(int(new_odds/g_cd), int(100/g_cd))
 
 
+def parlay_odds(odds):
+    """
+    :param odds: List. A list of odds for wagers to be included in parlay
+    :return: Parlay odds in Decimal terms
+    """
+    return np.prod(np.array([decimal_odds(x) for x in odds]))
+
+
 def convert_odds(odds, odds_style='a'):
     """
     :param odds: Stated odds from bookmaker (American, Decimal, or Fractional)
@@ -103,11 +111,3 @@ def convert_odds(odds, odds_style='a'):
 
     except (ValueError, KeyError, NameError):
         return None
-
-
-def parlay_odds(odds):
-    """
-    :param odds: List. A list of odds for wagers to be included in parlay
-    :return: Parlay odds in Decimal terms
-    """
-    return np.prod(np.array([decimal_odds(x) for x in odds]))
