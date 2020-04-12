@@ -25,9 +25,6 @@ A package containing the essential math and tools required for sports betting an
  - Value Bets (take in sets of odds, probabilities and output the most effective betting implementation)
  - Scan for Arbitrage (search scrape bookmakers to feed into Phase 2's Arbitrage evaluator)
  - Visualization (compare all wager opportunities, et al)
- 
-  **Phase 4 (_not started_):**
-  - Automation and Intelligence (e.g., Using phases 1-3 as tools, develop ML and AI models to make predictions, manage bankroll, execute bets)
 
 # Examples
 
