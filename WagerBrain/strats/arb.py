@@ -62,8 +62,6 @@ def basic_arbitrage(odds, stake):
             arb_prof = arb_profit(arb_percent, stake)
             bet1_size = (arb_percent[1] * stake) / arb_percent[0]
             bet2_size = (arb_percent[2] * stake) / arb_percent[0]
-
             return [round(arb_prof, 2), round(bet1_size, 2), round(bet2_size, 2)]
-
     except ValueError:
         print("You probably fed too many or too few values into the Odds parameter")
