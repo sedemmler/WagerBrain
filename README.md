@@ -21,10 +21,9 @@ A package containing the essential math and tools required for sports betting an
  
  **Phase 3 (_in progress_):**
  - Scrapers to gather data (Basketball Reference, KenPom etc.)  [_Partially implemented_]
- - Clean up functions into logical classes
  - Value Bets (take in sets of odds, probabilities and output the most effective betting implementation)
  - Scan for Arbitrage (search scrape bookmakers to feed into Phase 2's Arbitrage evaluator)
- - Visualization (compare all wager opportunities, et al)
+
 
 # Examples
 
